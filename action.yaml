@@ -1,0 +1,27 @@
+name: "Delete DNS Record"
+description: "Deletes CloudFlare DNS record"
+author: "Kriasoft"
+
+inputs:
+  id:
+    description: "DNS record ID"
+  name:
+    description: "DNS record name"
+  token:
+    description: "CloudFlare API token"
+    default: ${{ secrets.CLOUDFLARE_TOKEN }}
+    required: true
+  zone:
+    default: "CloudFlare zone"
+    default: ${{ secrets.CLOUDFLARE_ZONE }}
+    required: true
+
+outputs:
+
+runs:
+  using: "node12"
+  main: "main.js"
+
+branding:
+  icon: "at-sign"
+  color: "orange"
