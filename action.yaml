@@ -9,11 +9,9 @@ inputs:
     description: "DNS record name"
   token:
     description: "CloudFlare API token"
-    default: ${{ secrets.CLOUDFLARE_TOKEN }}
     required: true
   zone:
     description: "CloudFlare zone"
-    default: ${{ secrets.CLOUDFLARE_ZONE }}
     required: true
 
 outputs:
