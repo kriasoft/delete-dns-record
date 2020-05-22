@@ -5,9 +5,6 @@
 
 const cp = require("child_process");
 
-const event = require(process.env.GITHUB_EVENT_PATH);
-const pr = event.pull_request ? event.pull_request.number : "?";
-
 let res;
 let result;
 let id = process.env.INPUT_ID;
@@ -30,10 +27,7 @@ if (!id) {
     process.exit(1);
   }
 
-  const name = (process.env.INPUT_NAME || "")
-    .replace(/\{pr\}/gi, pr)
-    .replace(/\{pr_number\}/gi, pr)
-    .replace(/\{head_ref\}/gi, process.env.GITHUB_HEAD_REF);
+  const name = process.env.INPUT_NAME;
   const record = res.result.find((x) => x.name === name);
 
   if (!record) {
