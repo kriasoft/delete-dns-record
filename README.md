@@ -13,9 +13,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: kriasoft/delete-dns-record@v1
+      - uses: infraway/delete-dns-record@v1
         with:
-          name: "{PR}-review.example.com"
+          name: "review.example.com"
           token: ${{ secrets.CLOUDFLARE_TOKEN }}
           zone: ${{ secrets.CLOUDFLARE_ZONE }}
 ```
