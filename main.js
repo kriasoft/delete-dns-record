@@ -32,7 +32,7 @@ const getCurrentRecordId = () => {
   }
 
   return record.id;
-}
+};
 
 const deleteRecord = (id) => {
   // https://api.cloudflare.com/#dns-records-for-a-zone-delete-dns-record
@@ -53,7 +53,7 @@ const deleteRecord = (id) => {
     console.log(`::error ::${errors[0].message}`);
     process.exit(1);
   }
-}
+};
 
 const id = process.env.INPUT_ID || getCurrentRecordId();
 if (!id) {
