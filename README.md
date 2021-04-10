@@ -1,6 +1,6 @@
 # Delete DNS Record Action for GitHub
 
-Deletes CloudFlare DNS record by ID or record name.
+Removes CloudFlare DNS record by ID or record name.
 
 ## Usage via Github Actions
 
@@ -13,7 +13,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: infraway/delete-dns-record@v1
+      - uses: infraway/delete-dns-record@v2.0
         with:
           name: "review.example.com"
           token: ${{ secrets.CLOUDFLARE_TOKEN }}
