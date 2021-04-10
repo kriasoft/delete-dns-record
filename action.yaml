@@ -1,5 +1,5 @@
 name: "CloudFlare Delete DNS Record"
-description: "Deletes CloudFlare DNS record"
+description: "Removes CloudFlare DNS record"
 author: "InfraWay"
 
 inputs:
@@ -13,8 +13,6 @@ inputs:
   zone:
     description: "CloudFlare zone"
     required: true
-
-outputs:
 
 runs:
   using: "node12"
