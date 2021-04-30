@@ -1,6 +1,6 @@
-name: "Delete DNS Record"
-description: "Deletes CloudFlare DNS record"
-author: "Kriasoft"
+name: "CloudFlare Delete DNS Record"
+description: "Removes CloudFlare DNS record"
+author: "InfraWay"
 
 inputs:
   id:
@@ -19,5 +19,5 @@ runs:
   main: "main.js"
 
 branding:
-  icon: "at-sign"
-  color: "orange"
+  icon: "globe"
+  color: "green"
