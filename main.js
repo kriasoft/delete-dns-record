@@ -11,12 +11,13 @@ const pr = event.pull_request ? event.pull_request.number : "?";
 let res;
 let result;
 let id = process.env.INPUT_ID;
+let perPage = process.env.PER_PAGE ? process.env.PER_PAGE : "100";
 
 if (!id) {
   result = cp.spawnSync("curl", [
     ...["--header", `Authorization: Bearer ${process.env.INPUT_TOKEN}`],
     ...["--header", "Content-Type: application/json"],
-    `https://api.cloudflare.com/client/v4/zones/${process.env.INPUT_ZONE}/dns_records`,
+    `https://api.cloudflare.com/client/v4/zones/${process.env.INPUT_ZONE}/dns_records?per_page=${perPage}`,
   ]);
 
   if (result.status !== 0) {
