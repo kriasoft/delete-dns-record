@@ -6,11 +6,15 @@
 const cp = require("child_process");
 
 const getCurrentRecordId = () => {
+  const params = new URLSearchParams({
+    name: process.env.INPUT_NAME,
+  });
+  
   //https://api.cloudflare.com/#dns-records-for-a-zone-list-dns-records
   const { status, stdout } = cp.spawnSync("curl", [
     ...["--header", `Authorization: Bearer ${process.env.INPUT_TOKEN}`],
     ...["--header", "Content-Type: application/json"],
-    `https://api.cloudflare.com/client/v4/zones/${process.env.INPUT_ZONE}/dns_records?name=${process.env.INPUT_NAME}`,
+    `https://api.cloudflare.com/client/v4/zones/${process.env.INPUT_ZONE}/dns_records?${params.toString()}`,
   ]);
 
   if (status !== 0) {
